@@ -30,7 +30,7 @@ server.get('/b', function (req, res, next) {
 })
 
 server.get('/c', function (req, res, next) {
-  var tag = etag(pkg + ++count, {algorithm: 'sha512WithRsaEncryption'})
+  var tag = etag(pkg + ++count, {algorithm: 'sha256'})
 
   if (!(tag instanceof Error)) {
     res.setHeader('ETag', tag)
